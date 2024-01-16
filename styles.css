@@ -1,0 +1,100 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#attempts {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#guessInput {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#message {
+    color: #333;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInMessage 1s forwards, colorChange 0.5s forwards;
+}
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#message.success {
+    color: #4caf50;
+    animation: colorChangeSuccess 0.5s forwards;
+}
+
+@keyframes colorChangeSuccess {
+    from {
+        background-color: #fff;
+    }
+    to {
+        background-color: #81c784;
+    }
+}
+
+#message.error {
+    animation: colorChangeError 0.5s forwards;
+}
+
+@keyframes colorChangeError {
+    from {
+        background-color: #fff;
+    }
+    to {
+        background-color: #f44336;
+    }
+}
